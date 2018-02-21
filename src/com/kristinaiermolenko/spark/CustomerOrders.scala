@@ -34,7 +34,7 @@ object CustomerOrders {
     val parsedLines = lines.map(parseLines)
 
     val mapped = parsedLines.map(x => (x._1, x._2))
-      .reduceByKey((x, y) => x + y).sortByKey(ascending = false)
+      .reduceByKey((x, y) => x + y).map(x => (x._2, x._1)).sortByKey()
 
     for (result <- mapped) {
 
