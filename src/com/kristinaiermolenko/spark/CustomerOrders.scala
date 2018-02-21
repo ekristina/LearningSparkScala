@@ -11,7 +11,7 @@ import org.apache.spark._
 
 object CustomerOrders {
 
-  def parseLines(line: String): Unit = {
+  def parseLines(line: String): (Int, Float) = {
 
     val lineList = line.split(",")
 
