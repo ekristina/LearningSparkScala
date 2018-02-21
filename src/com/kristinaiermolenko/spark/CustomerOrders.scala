@@ -38,8 +38,8 @@ object CustomerOrders {
 
     for (result <- mapped) {
 
-      val customer = result._1
-      val amount = result._2
+      val customer = result._2
+      val amount = result._1
 
       println(s"Customer $customer spent $amount")
 
