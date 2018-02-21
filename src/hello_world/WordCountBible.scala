@@ -65,11 +65,14 @@ object WordCountBible {
 
     val wordCountsSorted = wordCounts.map(x => (x._2.toInt, x._1)).sortByKey()
 
-    for (result <- wordCountsSorted) {
+
+    println("| word | count |\n" +
+            "|------|-------|")
+    for (result <- wordCountsSorted.top(20)) {
       val count = result._1
       val word = result._2
 
-      println(s"$word: $count")
+      println(s"|$word | $count|")
     }
 
   }
