@@ -1,4 +1,4 @@
-package com.kristinaiermolenko.spark
+package hello_world
 
 import org.apache.spark._
 import org.apache.log4j._
@@ -7,7 +7,7 @@ import scala.math.max
 
 object Precipitation {
   
-  def parseLine(line:String) = {
+  def parseLine(line:String): (String, String, Float) = {
     val fields = line.split(",")
     val stationID = fields(0)
     val entryType = fields(2)

@@ -1,4 +1,4 @@
-package com.kristinaiermolenko.spark
+package hello_world
 
 import org.apache.log4j._
 import org.apache.spark._

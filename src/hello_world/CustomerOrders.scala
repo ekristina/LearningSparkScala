@@ -1,4 +1,5 @@
-package com.kristinaiermolenko.spark
+package hello_world
+
 /*
 *
 * Solving homework with customer-orders.csv
