@@ -3,6 +3,32 @@ package com.kristinaiermolenko.spark
 import org.apache.log4j._
 import org.apache.spark._
 
+/*
+TOP 20 words:
+
+go: 1492
+let: 1511
+men: 1653
+land: 1718
+day: 1734
+also: 1769
+children: 1802
+one: 1967
+come: 1971
+house: 2024
+came: 2093
+people: 2139
+king: 2257
+son: 2370
+israel: 2565
+man: 2613
+upon: 2748
+said: 3999
+god: 4442
+lord: 7830
+
+ */
+
 
 object WordCountBible {
 
@@ -16,7 +42,7 @@ object WordCountBible {
 
     // Download Bible text from project Gutenberg
     // http://www.gutenberg.org/cache/epub/10/pg10.txt
-    val bible_source = scala.io.Source.fromURL("http://www.gutenberg.org/files/10/10.txt").mkString.toLowerCase
+    val bible_source = scala.io.Source.fromURL("http://www.gutenberg.org/files/10/10.txt").mkString
     // skipping first and last lines about project gutenberg
     // starting with `The First Book of Moses:  Called Genesis` line
     val list = bible_source.split("\n").slice(37, 99850)
