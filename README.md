@@ -77,12 +77,12 @@ Prints out top 20 movies.
 Result (using ml-latest dataset:
 
 |Movie|Number of Ratings|
-|-----|-----------------|
+                                                                                |-----|-----------------|
 |Forrest Gump (1994)|91921|
-|"Shawshank Redemption|91082|
+|Shawshank Redemption, The (1994)|91082|
 |Pulp Fiction (1994)|87901|
-|"Silence of the Lambs|84078|
-|"Matrix|77960|
+|Silence of the Lambs, The (1991)|84078|
+|Matrix, The (1999)|77960|
 |Star Wars: Episode IV - A New Hope (1977)|77045|
 |Jurassic Park (1993)|74355|
 |Schindler's List (1993)|67662|
@@ -93,8 +93,8 @@ Result (using ml-latest dataset:
 |Star Wars: Episode V - The Empire Strikes Back (1980)|61672|
 |Fight Club (1999)|60024|
 |Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)|59693|
-|"Usual Suspects|59271|
+|Usual Suspects, The (1995)|59271|
 |American Beauty (1999)|57879|
 |Apollo 13 (1995)|57416|
 |Independence Day (a.k.a. ID4) (1996)|57232|
-|"Godfather|57070|
+|Godfather, The (1972)|57070|

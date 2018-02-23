@@ -19,8 +19,17 @@ object PopularMoviesNameMapping {
       // check if line is not empty
       if (line.length != 0) {
 
-        val fields = line.split(",")
-        movieNames += (fields(0).toInt -> fields(1))
+        if (line.contains("\"")) {
+          val fields = line.split("\"")
+          fields(0) = fields(0).replace(",", "")
+          movieNames += (fields(0).toInt -> fields(1))
+        }
+
+        else {
+          val fields = line.split(",")
+          movieNames += (fields(0).toInt -> fields(1))
+        }
+
       }
     }
 
@@ -53,7 +62,14 @@ object PopularMoviesNameMapping {
 
     val results = sortedMovies.top(20)
 
-    results.foreach(println)
+
+    println("|Movie|Number of Ratings|\n" +
+            "|-----|-----------------|")
+    for (movie <- results) {
+      val movieName = movie._2
+      val movieCount = movie._1
+      println(s"|$movieName|$movieCount|")
+    }
 
   }
 
