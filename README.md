@@ -74,10 +74,10 @@ Prints out top 20 movies.
 📄 *__PopularMoviesNameMapping.scala__* does the same as _PopularMovies.scala_ but maps movie titles with their IDs in results.
 Prints out top 20 movies.
 
-Result (using ml-latest dataset:
+Result (using ml-latest dataset):
 
 |Movie|Number of Ratings|
-                                                                                |-----|-----------------|
+|-----|-----------------|
 |Forrest Gump (1994)|91921|
 |Shawshank Redemption, The (1994)|91082|
 |Pulp Fiction (1994)|87901|
