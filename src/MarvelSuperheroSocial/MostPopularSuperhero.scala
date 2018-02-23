@@ -51,13 +51,16 @@ object MostPopularSuperhero {
     val flipped = totalFriendsByCharacter.map( x => (x._2, x._1) )
     
     // Find the max # of connections
-    val mostPopular = flipped.max()
+    val mostPopular = flipped.sortByKey(ascending = false).top(10)
     
     // Look up the name (lookup returns an array of results, so we need to access the first result with (0)).
-    val mostPopularName = namesRdd.lookup(mostPopular._2).head
+    val mostPopularNames = mostPopular.map(x => (x._1, namesRdd.lookup(x._2).head))//namesRdd.lookup(mostPopular._2).head
     
     // Print out our answer!
-    println(s"$mostPopularName is the most popular superhero with ${mostPopular._1} co-appearances.") 
+    for (name <- mostPopularNames) {
+      println(f"${name._2} is the most popular superhero with ${name._1} co-apperances")
+    }
+
   }
   
 }
