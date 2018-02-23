@@ -30,7 +30,7 @@ object CustomerOrders {
     // Create a SparkContext using every core of the local machine, named RatingsCounter
     val sc = new SparkContext("local[*]", "CustomerOrders")
 
-    val lines = sc.textFile("./customer-orders.csv")
+    val lines = sc.textFile("./hello_world_data/customer-orders.csv")
 
     val parsedLines = lines.map(parseLines)
 
