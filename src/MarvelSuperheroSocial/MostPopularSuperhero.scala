@@ -23,11 +23,6 @@ object MostPopularSuperhero {
       case _: NumberFormatException => None
       case _: ArrayIndexOutOfBoundsException => None
     }
-//    if (fields.length > 1) {
-//      Some(fields(0).trim().toInt, fields(1))
-//    } else {
-//      None // flatmap will just discard None results, and extract data from Some results.
-//    }
   }
  
   /** Our main function where the action happens */
