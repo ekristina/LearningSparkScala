@@ -98,3 +98,9 @@ Result (using ml-latest dataset):
 |Apollo 13 (1995)|57416|
 |Independence Day (a.k.a. ID4) (1996)|57232|
 |Godfather, The (1972)|57070|
+
+-----
+
+### 📁 src/MarvelSuperheroSocial
+
+Working with _**marvel**_ datasets from the course "_Apache Spark with Scala_ By Frank Kane"
