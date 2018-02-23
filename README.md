@@ -63,3 +63,14 @@ Customer 96 spent 3924.23
 ```
 
 -----
+
+### 📁 src/MovieRecommendation
+
+Contains files working with [MovieLens data sets](https://grouplens.org/datasets/movielens/)
+
+📄 *__PopularMovies.scala__* counts how many times each movie was rated == how popular the movie is. Doesn't contain movie names, just IDs. Uses _ratings.csv_ file.
+Prints out top 20 movies.
+
+📄 *__PopularMoviesNameMapping.scala__* does the same as _PopularMovies.scala_ but maps movie titles with their IDs in results.
+Prints out top 20 movies.
+
