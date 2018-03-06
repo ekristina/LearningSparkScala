@@ -99,6 +99,21 @@ Result (using ml-latest dataset):
 |Independence Day (a.k.a. ID4) (1996)|57232|
 |Godfather, The (1972)|57070|
 
+📄 *__MovieSimilarities.scala__* counts similar movies using MovieLens data set. It uses [Cosine_similarity](https://en.wikipedia.org/wiki/Cosine_similarity) to count similar movies based on similar ratings from users.
+Result:
+
+Top 10 similar movies for Life Is Beautiful (La Vita è bella) (1997)
+
+|Movie|score|strength|
+|-----|-----|--------|
+|Good Will Hunting (1997)|0.976235418147676|53|
+
+|Shawshank Redemption, The (1994)|0.9749373116159256|69|
+
+|Amelie (Fabuleux destin d'Amélie Poulain, Le) (2001)|0.9738613674727673|51|
+
+|Shrek (2001)|0.9716221218860066|52|
+
 -----
 
 ### 📁 src/MarvelSuperheroSocial

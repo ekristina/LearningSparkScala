@@ -23,12 +23,21 @@ object MovieSimilarities {
 
     val lines = Source.fromFile("./ml-latest/movies.csv").getLines().drop(1)
 
+    for (line <- lines) {
+      if (line.length != 0) {
 
-     for (line <- lines) {
-       val fields = line.split(',')
-       if (fields.length > 1) {
-        movieNames += (fields(0).toInt -> fields(1))
-       }
+        if (line.contains("\"")) {
+          val fields = line.split("\"")
+          fields(0) = fields(0).replace(",", "")
+          movieNames += (fields(0).toInt -> fields(1))
+        }
+
+        else {
+          val fields = line.split(",")
+          movieNames += (fields(0).toInt -> fields(1))
+        }
+
+      }
      }
 
      movieNames
@@ -102,7 +111,7 @@ object MovieSimilarities {
     println("\nLoading movie names...")
     val nameDict = loadMovieNames()
 
-    val dataWithHeader = sc.textFile("./ml-latest/ratings.csv")
+    val dataWithHeader = sc.textFile("./ml-latest-small/ratings.csv")
     val data = dataWithHeader.mapPartitionsWithIndex((ind, iter) => if (ind == 0) iter.drop(1) else iter)
 
     // Map ratings to key / value pairs: user ID => movie ID, rating
@@ -138,7 +147,7 @@ object MovieSimilarities {
       val coOccurenceThreshold = 50.0
 
       // val movieID:Int = args(0).toInt  // if using terminal
-      val movieID = 4105 //testing
+      val movieID = 2324 // testing Life is Beautiful
       // Filter for movies with this sim that are "good" as defined by
       // our quality thresholds above
 
@@ -151,9 +160,12 @@ object MovieSimilarities {
       )
 
       // Sort by quality score.
-      val results = filteredResults.map( x => (x._2, x._1)).sortByKey(ascending = false).take(10)
+      val results = filteredResults.map(x => (x._2, x._1)).sortByKey(ascending = false).take(10)
 
-      println("\nTop 10 similar movies for " + nameDict(movieID))
+      println("\nTop 10 similar movies for " + nameDict(movieID) + "\n")
+
+      println("|Movie|score|strength|\n" +
+      "|-----|-------|---------|")
       for (result <- results) {
         val sim = result._1
         val pair = result._2
@@ -162,7 +174,7 @@ object MovieSimilarities {
         if (similarMovieID == movieID) {
           similarMovieID = pair._2
         }
-        println(nameDict(similarMovieID) + "\tscore: " + sim._1 + "\tstrength: " + sim._2)
+        println(s"|${nameDict(similarMovieID)}|${sim._1}|${sim._2}|\n")
 //      }
     }
   }
