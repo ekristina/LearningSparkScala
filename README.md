@@ -1,6 +1,10 @@
 # LearningSparkScala
 
 This repository is for learning purposes.
+##### to make spark jobs work and not to go out of memory:
+- find a config file /usr/local/Cellar/apache-spark/2.2.1/libexec/conf/spark-defaults.conf.template
+- change its name to spark-defaults.conf
+- uncomment spark.driver.memory and change its value
 
 ----
 ### 📁 src/hello_world
