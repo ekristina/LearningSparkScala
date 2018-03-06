@@ -107,11 +107,8 @@ Top 10 similar movies for Life Is Beautiful (La Vita è bella) (1997)
 |Movie|score|strength|
 |-----|-----|--------|
 |Good Will Hunting (1997)|0.976235418147676|53|
-
 |Shawshank Redemption, The (1994)|0.9749373116159256|69|
-
 |Amelie (Fabuleux destin d'Amélie Poulain, Le) (2001)|0.9738613674727673|51|
-
 |Shrek (2001)|0.9716221218860066|52|
 
 -----
