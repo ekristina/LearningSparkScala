@@ -99,6 +99,46 @@ object MovieSimilarities {
     (score, numPairs)
   }
 
+  def computePearsonCorr(ratingPairs: RatingPairs): (Double, Int) = {
+    val numPairs:Int = ratingPairs.size
+
+    var sumX:Double = 0.0
+    var sumY:Double = 0.0
+    var nominator:Double = 0.0
+
+    var xSum: Double = 0.0
+    var ySum: Double = 0.0
+
+    for (pair <- ratingPairs) {
+      val ratingX = pair._1
+      val ratingY = pair._2
+
+      sumX += ratingX
+      sumY += ratingY
+
+    }
+    val meanX = sumX/numPairs
+    val meanY = sumY/numPairs
+
+    for (pair <- ratingPairs) {
+      val x: Double = pair._1
+      val y: Double = pair._2
+
+      nominator += (x - meanX) * (y - meanY)
+      xSum += (x - meanX) * (x - meanX)
+      ySum += (y - meanY) * (y - meanY)
+    }
+
+    var corr:Double = 0.0
+
+    val denominator:Double = sqrt(xSum) * sqrt(ySum)
+    if (denominator != 0) {
+      corr = nominator / denominator
+    }
+
+    (corr, numPairs)
+  }
+
 
   def main(args: Array[String]) {
 
