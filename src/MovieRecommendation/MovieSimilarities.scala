@@ -214,7 +214,7 @@ object MovieSimilarities {
         if (similarMovieID == movieID) {
           similarMovieID = pair._2
         }
-        println(s"|${nameDict(similarMovieID)}|${sim._1}|${sim._2}|\n")
+        println(s"|${nameDict(similarMovieID)}|${sim._1}|${sim._2}|")
 //      }
     }
   }
